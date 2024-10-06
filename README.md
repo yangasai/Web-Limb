@@ -12,7 +12,7 @@
 
 ## Visual
 <p align="center">
- ![](https://github.com/user-attachments/assets/d59a1219-5052-4640-8892-ca56a03d6665)
+  <img src="https://github.com/user-attachments/assets/d59a1219-5052-4640-8892-ca56a03d6665" alt="Visual">
 </p>
 
 
