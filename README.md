@@ -24,7 +24,7 @@ This site offers the opportunity to purchase the game 'Limb', and also provides 
 
 ## Project template
 - [Figma](https://www.figma.com/design/xpyLOQmSg6UN9tVea81RKA/Untitled?node-id=0-1&t=iVNwkblrpOKObiNs-1)
-- [AdobePhotoshop]
+- AdobePhotoshop
 
 ## Developers
 
