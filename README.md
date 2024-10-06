@@ -17,6 +17,9 @@
 </p>
 
 
+## Project template
+- [Figma](https://www.figma.com/design/xpyLOQmSg6UN9tVea81RKA/Untitled?node-id=0-1&t=iVNwkblrpOKObiNs-1)
+
 ## Developers
 
 - [Yandere](https://github.com/yangasai)
