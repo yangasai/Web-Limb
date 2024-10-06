@@ -10,6 +10,11 @@
 </p>
 
 
+## About
+
+This site offers the opportunity to purchase the game 'Limb', and also provides all the interesting information about it.
+
+
 ## Visual
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d59a1219-5052-4640-8892-ca56a03d6665" alt="Visual">
