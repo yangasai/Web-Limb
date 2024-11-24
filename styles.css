@@ -1,0 +1,622 @@
+/* Стандартныые настройки */
+html, body {
+    min-height: 100% !important;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+table {
+    margin: 0;
+    padding:0;
+}
+
+.container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+}
+
+
+p {
+    font-family: 'Nokia Sans S60', sans-serif;
+    font-weight: 400;
+    text-align: left;
+    font-size: 20px;
+    line-height: 36px;
+    color: #FFFFFF;
+    margin: 5%;
+}
+
+
+/* Медиа запросы */
+@media (min-width: 1920px) {
+    /* Стили для 2K экранов */
+    p {
+        font-size: 24px;
+    }
+    .LimbBuy {
+        top: 63%;
+        left: 16%;
+    }
+    #LimbStory {
+        top: 100%;
+        height: 100%;
+    }
+    #LimbCharacters {
+        top: 183%;
+        height: 92%;
+    }
+    #charactersContent {
+        left: 9%;
+        right: auto;
+    }
+    #imgChar {
+        margin: 3%;
+        max-width: 326px;
+    }
+    #LimbGameplay {
+        top: 266%;
+        height: 75%;
+    }
+    .card {
+        width: 22%;
+        height: 12%;
+    }
+    #LimbDevelopers {
+        top: 341%;
+        height: 100%;
+    }
+    #LimbSocial {
+        top: 442%;
+        height: 12%;
+    }
+    .img-button img {
+        top: 437%;
+    }
+    .CYan {
+        top: 452%;
+    }
+    .containerSocial {
+        margin: 2% 5%;
+    }
+    .dev {
+        font-size: 22px;
+    }
+    .name {
+        font-size: 38px;
+    }
+    .info-box {
+        min-width: 1150px;
+    }
+}
+
+@media (max-width: 1920px) {
+    /* Стили для Full HD экранов */
+    p {
+        font-size: 20px;
+    }
+    .LimbBuy {
+        top: 63%;
+        left: 14%;
+    }
+    #LimbStory {
+        top: 100%;
+        height: 100%;
+    }
+    #LimbCharacters {
+        top: 200%;
+        height: 100%;
+    }
+    #charactersContent {
+        left: 3%;
+        right: auto;
+    }
+    #imgChar {
+        margin: 3%;
+        max-width: 285px;
+    }
+    #LimbGameplay {
+        top: 295%;
+        height: 90%;
+    }
+    .card {
+        width: 26%;
+        height: 16%;
+    }
+    #LimbDevelopers {
+        top: 384%;
+        height: 100%;
+    }
+    #LimbSocial {
+        top: 486%;
+        height: 18%;
+    }
+    .img-button img {
+        top: 479%;
+    }
+    .CYan {
+        top: 498%;
+    }
+    .containerSocial {
+        margin: 2% 5%;
+    }
+    .dev {
+        font-size: 18px;
+    }
+
+    .name {
+        font-size: 32px;
+    }
+    .info-box {
+        min-width: 980px;
+    }
+}
+
+
+/* Анимации */
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Контейнеры для текста */
+@font-face {
+    font-family: 'Nokia Sans S60';
+    src: url('font/Nokia Sans S60.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Correction Brush';
+    src: url('font/Correction Brush.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+.containerText {
+    display: flex;
+    justify-content: flex-start;
+    margin: 1% 5%;
+    position: relative;
+}
+
+.containerTitle {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.containerChar {
+    display: flex;
+    align-items: flex-start;
+}
+
+.containerGameplay {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.containerSocial {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.containerSocial.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation-delay: 0.7s;
+}
+
+
+[id$="C"] {
+    /* Каталог: Сюжет | Персонажи | Геймплей | Авторы */
+    margin: 0 calc(1%/2);
+    z-index: 0;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeIn 0.5s forwards;
+    animation-delay: 0.3s;
+}
+
+.buttonC {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.buttonC:hover {
+    opacity: 0.4;
+}
+
+[id$="Title"] {
+    /* Титульники: Сюжет | Персонажи | Геймплей | Авторы */
+    margin: 3%;
+    z-index: 0;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+
+/* Первая страница */
+.LimbPreview {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(material/limb.png) no-repeat;
+    background-size: cover;
+}
+
+
+.LimbBuy {
+    display: inline-block;
+    position: relative;
+    max-width: 359px;
+    height: 90px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: url(material/buy.png) no-repeat;
+    background-size: cover;
+    border: 2px solid #FFFFFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 30px 0;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeIn 0.5s forwards;
+    animation-delay: 0.3s;
+    transition: opacity 0.5s ease;
+}
+
+.LimbBuy:hover {
+    opacity: 0.72 !important;
+}
+
+
+/* Вторая страница */
+#LimbStory{
+    background: url(material/bgstory.png) no-repeat;
+    position: absolute;
+    width: 100%;
+    border-top: 3px solid #FFFFFF;
+    padding: 0 0 100px 0;
+    background-size: cover;
+}
+
+#storyContent {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    max-width: 995px;
+    margin: 7%;
+    text-align: center;
+}
+
+
+/* Третья страница */
+#LimbCharacters {
+    background: url(material/bgchar.png) no-repeat;
+    position: absolute;
+    width: 100%;
+    border-top: 3px solid #FFFFFF;
+    padding: 0 0 100px 0;
+    background-size: cover;
+}
+
+#charactersContent {
+    position: absolute;
+    align-items: flex-start;
+    width: 100%;
+    height: 70%;
+    max-width: 1100px;
+    margin: 14%;
+    text-align: center;
+}
+
+
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    flex-direction: column;
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.info-box.visible {
+    opacity: 1;
+}
+
+
+/* Четвёртая страница */
+#LimbGameplay {
+    background: url(material/bggameplay.png) no-repeat;
+    position: absolute;
+    width: 100%;
+    border-top: 3px solid #FFFFFF;
+    padding: 0 0 100px 0;
+    background-size: cover;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+    padding: 0.5%;
+    position: relative;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 3px solid #FFFFFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Стиль для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition-delay: 0.3s;
+}
+
+.modal.show {
+    display: flex;
+    animation: fadeIn 0.7s forwards;
+}
+
+.modal.fade-out {
+    animation: fadeOut 0.5s forwards; /* Применение анимации исчезновения */
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+/* Пятая страница */
+#LimbDevelopers {
+    background: url(material/bgdevelopers.png) no-repeat;
+    position: absolute;
+    width: 100%;
+    border-top: 3px solid #FFFFFF;
+    border-bottom: 3px solid #FFFFFF;
+    padding: 0 0 100px 0;
+    background-size: cover;
+}
+
+.containerDevelopers {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    gap: 8%;
+    margin-bottom: 2.5%;
+}
+
+.dev {
+    font-family: 'Nokia Sans S60', sans-serif;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.name {
+    font-family: 'correction brush', sans-serif;
+    margin: 10% 0;
+    text-align: center;
+    line-height: 1.2;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Шестая страница */
+#LimbSocial {
+    background: url(material/bgblack.png) no-repeat;
+    position: absolute;
+    width: 100%;
+    padding: 0 0 100px 0;
+    background-size: cover;
+}
+
+.img-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    left: 50%;
+}
+
+.img-button img {
+    position: absolute;
+    height: auto;
+    z-index: 0;
+    transition: 0.3s ease;
+}
+
+.img-button:hover img {
+    animation: jump 0.8s ease infinite;
+    content: url('material/topHover.png');
+}
+
+.CYan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin: auto;
+    padding: 0;
+    z-index: 0;
+}
+
+.buttonVk {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.buttonVk:hover img{
+    transition: transform 0.4s ease;
+    transform: scale(0.9);
+    content: url('material/vkHover.png');
+}
+
+
+.buttonTelegram {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.buttonTelegram:hover img{
+    transition: transform 0.4s ease;
+    transform: scale(0.9);
+    content: url('material/telegramHover.png');
+}
+
+
+.buttonYoutube {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.buttonYoutube:hover img{
+    transition: transform 0.4s ease;
+    transform: scale(0.9);
+    content: url('material/youtubeHover.png');
+}
+
+
+.buttonPatrion {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.buttonPatrion:hover img{
+    transition: transform 0.4s ease;
+    transform: scale(0.9);
+    content: url('material/patrionHover.png');
+}
+

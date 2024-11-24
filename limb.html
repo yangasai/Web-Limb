@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content="https://limb-visual-novella.com">
+    <title>ЛИМБ | Официальный сайт</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dust.css">
+    <link rel="stylesheet" href="load.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+    <div id="content">
+        <div id="top" class="container LimbPreview">
+            <div class="fullDust">
+                <div id='dust1'></div>
+                <div id='dust2'></div>
+            </div>
+            <div class="containerText">
+                <button class="buttonC" onclick="scrollToElement('story')">
+                    <img src="material/cstory.png" alt="Сюжет" id="storyC">
+                </button>
+                <button class="buttonC" onclick="scrollToElement('characters')">
+                    <img src="material/ccharacters.png" alt="Персонажи" id="charactersC">
+                </button>
+                <button class="buttonC" onclick="scrollToElement('gameplay')">
+                    <img src="material/cgameplay.png" alt="Геймплей" id="gameplayC">
+                </button>
+                <button class="buttonC" onclick="scrollToElement('developers')">
+                    <img src="material/cdevelopers.png" alt="Авторы" id="developersC">
+                </button>
+            </div>
+            <button class="LimbBuy"></button>
+        </div>
+        <div id="LimbStory">
+            <div class="containerTitle" id="story">
+                <img src="material/story.png" alt="Сюжет" id="storyTitle">
+                <div id="storyContent">
+                    <p>Серая бытовая рутина давно вписалась в нашу жизнь. В окнах старых панельных домов тускнеет свет,
+                        а яркие огни мегаполиса скрывают мрак и истинную природу суровой реальности. Закон и мораль
+                        давно утратили свою значимость — каждый выбирает свой путь и держится за свои убеждения.</p>
+
+                    <p>Жизнь полна неожиданных поворотов и развилок, ведущих к долгожданному финалу. Но всё это кажется
+                        скучным и однообразным. Как поступить правильно: погрязнуть в тьме яркого света или остаться
+                        человеком? Почему этот выбор кажется мне таким знакомым?</p>
+
+                    <p style="border: 2px solid #FFFFFF; padding: 5px;">"Лимб" — визуальная новелла, сочетающая в себе элементы различных жанров. История зарождается в
+                        маленьком городке, расположенном недалеко от крупного мегаполиса, скрывающего свои мрачные
+                        тайны. В последнее время жители начали получать черные конверты, после чего таинственным
+                        образом исчезают. Мистика или логическое объяснение происходящему — это предстоит
+                        выяснить главному герою, оказавшемуся в самом центре событий.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="LimbCharacters">
+            <div class="containerTitle" id="characters">
+                <img src="material/characters.png" alt="Персонажи" id="charactersTitle">
+                <div class="containerChar" id="charactersContent">
+                    <div class="avatar-container">
+                        <img src="material/ava_gg.png" alt="Персонаж 1" class="avatar" onclick="changeInfo(1)">
+                        <img src="material/ava_sonya.png" alt="Персонаж 2" class="avatar" onclick="changeInfo(2)">
+                        <img src="material/ava_vika.png" alt="Персонаж 3" class="avatar" onclick="changeInfo(3)">
+                        <img src="material/ava_mira.png" alt="Персонаж 3" class="avatar" onclick="changeInfo(4)">
+                    </div>
+                    <div id="info" class="info-box">
+                        <p id="description"></p>
+                        <img id="imgChar" src="" alt="" style="display: none">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="characters.js"></script>
+
+        <div id="LimbGameplay">
+            <div class="containerTitle" id="gameplay">
+                <img src="material/gameplay.png" alt="Геймплей" id="gameplayTitle">
+            </div>
+            <div class="gallery">
+                <div class="card" onclick="openModal('gameplay1.png')">
+                    <img src="material/gameplay1.png" alt="Скриншот 1">
+                </div>
+                <div class="card" onclick="openModal('gameplay2.png')">
+                    <img src="material/gameplay2.png" alt="Скриншот 2">
+                </div>
+                <div class="card" onclick="openModal('gameplay3.png')">
+                    <img src="material/gameplay3.png" alt="Скриншот 3">
+                </div>
+            </div>
+            <div class="gallery">
+                <div class="card" onclick="openModal('gameplay4.png')">
+                    <img src="material/gameplay4.png" alt="Скриншот 4">
+                </div>
+                <div class="card" onclick="openModal('gameplay5.png')">
+                    <img src="material/gameplay5.png" alt="Скриншот 5">
+                </div>
+                <div class="card" onclick="openModal('gameplay6.png')">
+                    <img src="material/gameplay6.png" alt="Скриншот 6">
+                </div>
+            </div>
+
+            <div class="modal" id="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img id="modalImage" src="" alt="Скриншот увеличен">
+            </div>
+        </div>
+
+        <div id="LimbDevelopers">
+            <div class="containerTitle" id="developers">
+                <img src="material/developers.png" alt="Разработчики" id="developersTitle">
+            </div>
+            <div class="containerDevelopers">
+                <div class="dev">Продюсер
+                    <p class="name">Yandere</p>
+                </div>
+                <div class="dev">Сценаристы
+                    <p class="name">Yandere<br> Sunohara</p>
+                </div>
+                <div class="dev">Писатели
+                    <p class="name">Yandere<br> Sunohara</p>
+                </div>
+                <div class="dev">Художники
+                    <p class="name">Yandere</p>
+                </div>
+            </div>
+            <div class="containerDevelopers">
+                <div class="dev">Композиторы
+                    <p class="name">Besmeller</p>
+                </div>
+                <div class="dev">Геймдизайн
+                    <p class="name">Yandere</p>
+                </div>
+                <div class="dev">Программист
+                    <p class="name">Yandere</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="LimbSocial">
+            <div class="containerTitle">
+                <div class="containerSocial">
+                    <button class="buttonVk">
+                        <img src="material/vk.png" alt="Вк">
+                    </button>
+                    <button class="buttonTelegram">
+                        <img src="material/telegram.png" alt="Телеграмм">
+                    </button>
+                    <button class="buttonYoutube">
+                        <img src="material/youtube.png" alt="Ютуб">
+                    </button>
+                    <button class="buttonPatrion">
+                        <img src="material/patrion.png" alt="Поддрежать нас">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="containerTitle">
+            <button class="img-button" onclick="scrollToTop()">
+                <img src="material/top.png" alt="Кнопка: возврата в начало страницы">
+            </button>
+            <img src="material/yandere.png" alt="Цитирование: Yandere" class="CYan">
+        </div>
+    </div>
+
+    <script src="loader.js"></script>
+</body>
+</html>
