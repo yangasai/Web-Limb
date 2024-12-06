@@ -11,9 +11,13 @@ html, body {
 }
 
 body {
+    margin: 0;
+    padding: 0;
     background: #000;
     color: #fff;
-    overflow-x: hidden;
+}
+
+table {
     margin: 0;
     padding: 0;
 }
@@ -30,7 +34,7 @@ table {
 }
 
 .container {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: stretch;
     margin: auto;
@@ -40,140 +44,22 @@ table {
 
 
 p {
-    font-family: 'Nokia Sans S60', sans-serif;
-    font-weight: 400;
-    text-align: left;
-    font-size: 20px;
-    line-height: 36px;
-    color: #FFFFFF;
-    margin: 5%;
+    font-family: 'Nokia Sans S60', sans-serif; /* Шрифт */
+    font-weight: 450; /* Жирность шрифта */
+    text-align: left; /* Выравнивание текста по левому краю */
+    font-size: 1.3rem; /* Базовый размер шрифта */
+    line-height: 1.5; /* Высота строки для улучшения читаемости */
+    color: #FFFFFF; /* Цвет текста */
+    margin: 5%; /* Отступы вокруг абзаца */
+    padding: 10px; /* Внутренние отступы для улучшения визуального восприятия */
+    border-radius: 5px; /* Закругленные углы для фона */
 }
 
-
-/* Медиа запросы */
-@media (min-width: 1920px) {
-    /* Стили для 2K экранов */
+@media (max-width: 480px) {
     p {
-        font-size: 24px;
-    }
-    .LimbBuy {
-        top: 63%;
-        left: 16%;
-    }
-    #LimbStory {
-        top: 100%;
-        height: 100%;
-    }
-    #LimbCharacters {
-        top: 183%;
-        height: 92%;
-    }
-    #charactersContent {
-        left: 9%;
-        right: auto;
-    }
-    #imgChar {
-        margin: 3%;
-        max-width: 326px;
-    }
-    #LimbGameplay {
-        top: 266%;
-        height: 75%;
-    }
-    .card {
-        width: 22%;
-        height: 12%;
-    }
-    #LimbDevelopers {
-        top: 341%;
-        height: 100%;
-    }
-    #LimbSocial {
-        top: 442%;
-        height: 12%;
-    }
-    .img-button img {
-        top: 437%;
-    }
-    .CYan {
-        top: 452%;
-    }
-    .containerSocial {
-        margin: 2% 5%;
-    }
-    .dev {
-        font-size: 22px;
-    }
-    .name {
-        font-size: 38px;
-    }
-    .info-box {
-        min-width: 1150px;
+        font-size: 0.8rem;
     }
 }
-
-@media (max-width: 1920px) {
-    /* Стили для Full HD экранов */
-    p {
-        font-size: 20px;
-    }
-    .LimbBuy {
-        top: 63%;
-        left: 14%;
-    }
-    #LimbStory {
-        top: 100%;
-        height: 100%;
-    }
-    #LimbCharacters {
-        top: 200%;
-        height: 100%;
-    }
-    #charactersContent {
-        left: 3%;
-        right: auto;
-    }
-    #imgChar {
-        margin: 3%;
-        max-width: 285px;
-    }
-    #LimbGameplay {
-        top: 295%;
-        height: 90%;
-    }
-    .card {
-        width: 26%;
-        height: 16%;
-    }
-    #LimbDevelopers {
-        top: 384%;
-        height: 100%;
-    }
-    #LimbSocial {
-        top: 486%;
-        height: 18%;
-    }
-    .img-button img {
-        top: 479%;
-    }
-    .CYan {
-        top: 498%;
-    }
-    .containerSocial {
-        margin: 2% 5%;
-    }
-    .dev {
-        font-size: 18px;
-    }
-
-    .name {
-        font-size: 32px;
-    }
-    .info-box {
-        min-width: 980px;
-    }
-}
-
 
 /* Анимации */
 @keyframes jump {
@@ -211,35 +97,41 @@ p {
 @font-face {
     font-family: 'Nokia Sans S60';
     src: url('font/Nokia Sans S60.ttf') format('woff2');
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
     font-family: 'Correction Brush';
     src: url('font/Correction Brush.ttf') format('woff2');
-    font-weight: normal;
-    font-style: normal;
 }
 
 
 
 .containerText {
-    display: flex;
-    justify-content: flex-start;
-    margin: 1% 5%;
-    position: relative;
+    position: absolute; /* Позволяет позиционировать контейнер относительно родительского элемента */
+    top: 10px; /* Отступ сверху */
+    left: 10px; /* Отступ слева */
 }
+
+
 
 .containerTitle {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center; /* Центрирование по вертикали */
+    margin: 20px; /* Отступы вокруг контейнера */
+    padding: 10px; /* Внутренние отступы */
+    gap: 15px; /* Промежуток между элементами */
 }
 
+
 .containerChar {
-    display: flex;
-    align-items: flex-start;
+    display: flex; /* Используем flexbox для расположения элементов */
+    align-items: flex-start; /* Выравнивание элементов по верхнему краю */
+    justify-content: space-between; /* Распределяем элементы с промежутками между ними */
+    margin: 10px; /* Отступы вокруг контейнера */
+    padding: 10px; /* Внутренние отступы для улучшения визуального восприятия */
+    gap: 15px; /* Промежуток между элементами */
 }
 
 .containerGameplay {
@@ -250,11 +142,10 @@ p {
 
 .containerSocial {
     display: flex;
-    justify-content: flex-start;
-    position: relative;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    flex-wrap: wrap;
+    opacity: 0; /* Начальная непрозрачность для анимации */
+    transform: translateY(20px); /* Начальное смещение по оси Y */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Плавные переходы */
 }
 
 .containerSocial.visible {
@@ -279,11 +170,19 @@ p {
     background: transparent;
     border: none;
     cursor: pointer;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease; /* Добавлено свойство для анимации трансформации */
+    padding: 10px 15px; /* Внутренние отступы для увеличения области нажатия */
+    font-size: 16px; /* Размер шрифта */
 }
 
 .buttonC:hover {
-    opacity: 0.4;
+    opacity: 0.7; /* Изменение прозрачности при наведении */
+    transform: scale(1.05); /* Увеличение кнопки при наведении */
+}
+
+.buttonC:active {
+    opacity: 0.5; /* Изменение прозрачности при нажатии */
+    transform: scale(0.95); /* Уменьшение кнопки при нажатии */
 }
 
 [id$="Title"] {
@@ -296,32 +195,38 @@ p {
 
 /* Первая страница */
 .LimbPreview {
-    position: absolute;
     width: 100%;
-    height: 100%;
-    background: url(material/limb.png) no-repeat;
+    height: 100vh; /* Используйте 100vh для полной высоты экрана */
+    background: url(material/limb.png) no-repeat center center; /* Центрирование фона */
     background-size: cover;
+    display: flex; /* Используем Flexbox для центрирования содержимого, если нужно */
+    justify-content: center; /* Центрируем по горизонтали */
 }
 
 
+
 .LimbBuy {
-    display: inline-block;
-    position: relative;
-    max-width: 359px;
+    display: inline-flex; /* Используем Flexbox для выравнивания содержимого */
+    justify-content: center; /* Центрируем содержимое */
+    align-items: center; /* Вертикальное выравнивание */
+    max-width: 100%;
+    width: 359px;
     height: 90px;
     box-sizing: border-box;
     cursor: pointer;
-    background: url(material/buy.png) no-repeat;
+    background: url(material/buy.png) no-repeat center center; /* Центрирование фона */
     background-size: cover;
     border: 2px solid #FFFFFF;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 30px 0;
+    border-radius: 30px 0 30px 0; /* Убираем радиус для одной стороны */
     opacity: 0;
     transform: translateY(15px);
     animation: fadeIn 0.5s forwards;
     animation-delay: 0.3s;
     transition: opacity 0.5s ease;
+    margin: 20px auto; /* Центрируем элемент по горизонтали */
 }
+
 
 .LimbBuy:hover {
     opacity: 0.72 !important;
@@ -329,14 +234,18 @@ p {
 
 
 /* Вторая страница */
-#LimbStory{
-    background: url(material/bgstory.png) no-repeat;
-    position: absolute;
+#LimbStory {
+    background: url(material/bgstory.png) no-repeat center center; /* Центрирование фона */
     width: 100%;
+    height: 100vh;
     border-top: 3px solid #FFFFFF;
-    padding: 0 0 100px 0;
+    padding: 0 0 100px 0; /* Внутренние отступы */
     background-size: cover;
+    display: flex; /* Используем Flexbox для выравнивания содержимого */
+    flex-direction: column; /* Вертикальное расположение содержимого */
+    align-items: center; /* Центрируем содержимое по горизонтали */
 }
+
 
 #storyContent {
     position: absolute;
@@ -350,13 +259,17 @@ p {
 
 /* Третья страница */
 #LimbCharacters {
-    background: url(material/bgchar.png) no-repeat;
-    position: absolute;
+    background: url(material/bgchar.png) no-repeat center center; /* Центрируем фон */
     width: 100%;
+    height: 100vh;
     border-top: 3px solid #FFFFFF;
-    padding: 0 0 100px 0;
+    padding: 0 0 100px 0; /* Внутренние отступы */
     background-size: cover;
+    display: flex; /* Используем Flexbox для выравнивания содержимого */
+    flex-direction: column; /* Вертикальное расположение содержимого */
+    align-items: center; /* Центрируем содержимое по горизонтали */
 }
+
 
 #charactersContent {
     position: absolute;
@@ -370,54 +283,74 @@ p {
 
 
 .avatar-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-    flex-direction: column;
+    display: flex; /* Используем flexbox для расположения элементов */
+    justify-content: center; /* Центрируем элементы по горизонтали */
+    align-items: center; /* Центрируем элементы по вертикали */
+    margin: 20px; /* Отступы вокруг контейнера */
+    flex-direction: column; /* Располагаем элементы в колонку */
+    padding: 15px; /* Внутренние отступы для улучшения визуального восприятия */
+    border-radius: 10px; /* Закругленные углы для стиля */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для глубины */
 }
+
 
 .avatar {
-    width: 70px;
-    height: 70px;
-    margin: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    width: 5vw; /* Ширина аватара в процентах от ширины окна */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    margin: 10px; /* Отступы вокруг аватара */
+    cursor: pointer; /* Указатель курсора при наведении */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для трансформации и тени */
 }
 
+/* Эффект при наведении */
 .avatar:hover {
-    transform: scale(1.05);
+    transform: scale(1.1); /* Увеличение аватара при наведении */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Тень для глубины при наведении */
+}
+
+@media (max-width: 480px) {
+    .avatar {
+        width: 13vw; /* Увеличиваем размер аватара на меньших экранах */
+    }
 }
 
 .info-box {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    display: flex; /* Используем flexbox для выравнивания элементов */
+    align-items: center; /* Центрируем элементы по вертикали */
+    justify-content: center; /* Центрируем элементы по горизонтали */
+    text-align: center; /* Выравнивание текста по центру */
+    opacity: 0; /* Начальная прозрачность */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Плавный переход для прозрачности и трансформации */
+    transform: translateY(10px); /* Сдвиг вниз для эффекта появления */
+    padding: 15px; /* Внутренние отступы для улучшения визуального восприятия */
+    border-radius: 8px; /* Закругленные углы для стиля */
+    color: white; /* Цвет текста */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Тень для глубины */
 }
 
+/* Эффект появления */
 .info-box.visible {
-    opacity: 1;
+    opacity: 1; /* Полная непрозрачность */
 }
 
 
 /* Четвёртая страница */
 #LimbGameplay {
-    background: url(material/bggameplay.png) no-repeat;
-    position: absolute;
+    background: url(material/bggameplay.png) no-repeat center center; /* Центрируем фон */
     width: 100%;
+    height: 100vh;
     border-top: 3px solid #FFFFFF;
-    padding: 0 0 100px 0;
+    padding: 0 0 100px 0; /* Внутренние отступы */
     background-size: cover;
+    display: flex; /* Используем Flexbox для выравнивания содержимого */
+    flex-direction: column; /* Вертикальное расположение содержимого */
+    align-items: center; /* Центрируем содержимое по горизонтали */
 }
 
+
 .gallery {
-    display: flex;
-    justify-content: center;
-    gap: 1%;
-    padding: 0.5%;
-    position: relative;
+    width: 80%;
+    margin: 25px;
 }
 
 .card {
@@ -441,10 +374,6 @@ p {
     transform: scale(1.05);
 }
 
-.card:hover img {
-    transform: scale(1.1);
-}
-
 /* Стиль для модального окна */
 .modal {
     display: none;
@@ -466,7 +395,7 @@ p {
 }
 
 .modal.fade-out {
-    animation: fadeOut 0.5s forwards; /* Применение анимации исчезновения */
+    animation: fadeOut 0.5s forwards;
 }
 
 .modal img {
@@ -487,14 +416,18 @@ p {
 
 /* Пятая страница */
 #LimbDevelopers {
-    background: url(material/bgdevelopers.png) no-repeat;
-    position: absolute;
+    background: url(material/bgdevelopers.png) no-repeat center center; /* Центрируем фон */
     width: 100%;
+    height: 100vh;
     border-top: 3px solid #FFFFFF;
     border-bottom: 3px solid #FFFFFF;
-    padding: 0 0 100px 0;
+    padding: 0 0 100px 0; /* Внутренние отступы */
     background-size: cover;
+    display: flex; /* Используем Flexbox для выравнивания содержимого */
+    flex-direction: column; /* Вертикальное расположение содержимого */
+    align-items: center; /* Центрируем содержимое по горизонтали */
 }
+
 
 .containerDevelopers {
     display: flex;
@@ -502,45 +435,67 @@ p {
     align-items: flex-start;
     justify-content: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    gap: 8%;
+    gap: 8%; /* Промежуток между элементами */
     margin-bottom: 2.5%;
+    flex-wrap: wrap; /* Позволяет переносить элементы на новую строку */
+    width: 100%; /* Установка ширины на 100% родительского элемента */
+    max-width: 1200px; /* Максимальная ширина для больших экранов */
+    padding: 20px; /* Внутренние отступы для улучшения восприятия */
+    box-sizing: border-box; /* Учитывает отступы и границы в общей ширине */
 }
 
-.dev {
+
+
+
+.devel {
     font-family: 'Nokia Sans S60', sans-serif;
+    font-size: 1.5rem;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .name {
     font-family: 'correction brush', sans-serif;
-    margin: 10% 0;
+    margin: 5% 0;
+    font-size: 2rem;
     text-align: center;
     line-height: 1.2;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
 }
 
+
+@media (max-width: 480px) {
+    .containerDevelopers {
+        width: 80%; /* Уменьшение ширины на мобильных устройствах */
+    }
+
+    .name {
+        font-size: 1.2rem; /* Уменьшение размера шрифта для маленьких экранов */
+    }
+
+    .devel {
+        font-size: 1rem; /* Уменьшение размера шрифта для .dev на маленьких экранах */
+        padding: 10px; /* Уменьшение внутренних отступов для .dev */
+    }
+}
 
 /* Шестая страница */
 #LimbSocial {
-    background: url(material/bgblack.png) no-repeat;
-    position: absolute;
+    background: url(material/bgblack.png) no-repeat center center; /* Центрируем фон */
     width: 100%;
-    padding: 0 0 100px 0;
+
     background-size: cover;
+    display: flex; /* Используем Flexbox для выравнивания содержимого */
+    flex-direction: column; /* Вертикальное расположение содержимого */
+    align-items: center; /* Центрируем содержимое по горизонтали */
 }
 
+
 .img-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    padding: 0;
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    left: 50%;
+    position: relative; /* Для позиционирования */
 }
 
 .img-button img {
@@ -559,15 +514,16 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
     margin: auto;
-    padding: 0;
+    padding-bottom: 3vh; /* Отступ снизу */
     z-index: 0;
 }
 
-.buttonVk {
+.buttonVk,
+.buttonTelegram,
+.buttonYoutube,
+.buttonPatrion {
     background: transparent;
-    border: none;
     cursor: pointer;
     transition: 0.4s ease;
 }
@@ -579,13 +535,6 @@ p {
 }
 
 
-.buttonTelegram {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    transition: 0.4s ease;
-}
-
 .buttonTelegram:hover img{
     transition: transform 0.4s ease;
     transform: scale(0.9);
@@ -593,26 +542,12 @@ p {
 }
 
 
-.buttonYoutube {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    transition: 0.4s ease;
-}
-
 .buttonYoutube:hover img{
     transition: transform 0.4s ease;
     transform: scale(0.9);
     content: url('material/youtubeHover.png');
 }
 
-
-.buttonPatrion {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    transition: 0.4s ease;
-}
 
 .buttonPatrion:hover img{
     transition: transform 0.4s ease;
