@@ -38,6 +38,44 @@ button {
     width: 100%;
 }
 
+.fontLimb {
+    font-family: 'Nokia Sans S60', sans-serif;
+    color: #ffffff;
+}
+
+.inputLimb {
+    font-family: 'Nokia Sans S60', sans-serif;
+    position: relative;
+    margin: 20px 0;
+}
+
+.inputLimb input {
+    padding: 10px;
+    border: 2px solid #3d3d3d; /* Цвет рамки */
+    border-radius: 5px; /* Закругленные углы */
+    width: 100%; /* Ширина 100% */
+    box-sizing: border-box; /* Учитывать отступы и границы в ширине */
+    transition: border-color 0.3s; /* Плавный переход цвета рамки */
+}
+
+.inputLimb input:focus {
+    border-color: #595959; /* Цвет рамки при фокусе */
+    outline: none; /* Убираем стандартное выделение */
+}
+
+.inputLimb label {
+    color: #ffffff; /* Цвет текста метки */
+    transition: 0.2s; /* Плавный переход */
+    pointer-events: none; /* Убираем взаимодействие с меткой */
+}
+
+.inputLimb input:focus + label,
+.inputLimb input:not(:placeholder-shown) + label {
+    top: -10px; /* Поднимаем метку вверх */
+    left: 10px; /* Сохраняем отступ слева */
+    font-size: 12px; /* Уменьшаем размер шрифта */
+    color: #007BFF; /* Цвет текста метки при фокусе */
+}
 
 p {
     font-family: 'Nokia Sans S60', sans-serif; /* Шрифт */
@@ -168,18 +206,30 @@ p {
     cursor: pointer;
     transition: opacity 0.2s ease, transform 0.2s ease; /* Добавлено свойство для анимации трансформации */
     padding: 10px 15px; /* Внутренние отступы для увеличения области нажатия */
-    font-size: 16px; /* Размер шрифта */
 }
 
-.buttonC:hover {
+.buttonP {
+    position: absolute;
+    top: 6px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.buttonC:hover,
+.buttonP:hover {
     opacity: 0.7; /* Изменение прозрачности при наведении */
     transform: scale(1.05); /* Увеличение кнопки при наведении */
 }
 
-.buttonC:active {
+.buttonC:active,
+.buttonP:active {
     opacity: 0.5; /* Изменение прозрачности при нажатии */
     transform: scale(0.95); /* Уменьшение кнопки при нажатии */
 }
+
 
 [id$="Title"] {
     /* Титульники: Сюжет | Персонажи | Геймплей | Авторы */
@@ -232,10 +282,66 @@ p {
     opacity: 0.72 !important;
 }
 
+.user {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Прокрутка, если нужно */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+}
+
+.userContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    margin: 15% auto;
+    padding: 20px;
+    width: 340px;
+    border-radius: 10px;
+    position: relative; /* Для абсолютного позиционирования дочерних элементов */
+}
+
+.userClose {
+    color: #ffffff;
+    position: absolute; /* Абсолютное позиционирование */
+    top: 10px; /* Отступ от верхней грани */
+    right: 15px; /* Отступ от правой грани */
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer; /* Указатель при наведении */
+}
+
+.userClose:hover,
+.userClose:focus {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.buttonUser {
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttonUser:hover {
+    background-color: #3d3d3d;
+}
+
 @media (max-width: 480px) {
     .LimbPreview {
-        height: auto; /* Убираем фиксированную высоту на мобильных устройствах */
-        min-height: 100vh; /* Минимальная высота равная высоте экрана */
+        height: auto;
+        min-height: 100vh;
     }
 
     .LimbBuy {
@@ -246,8 +352,8 @@ p {
     }
 
     .containerBuy {
-        bottom: 1vh; /* Расположение от нижнего края контейнера */
-        left: 1vh; /* Расположение от левого края контейнера */
+        bottom: 1vh;
+        left: 1vh;
     }
 }
 
@@ -270,7 +376,7 @@ p {
     width: 100%;
     height: 100%;
     max-width: 1185px;
-    margin: 5%;
+    margin: 6%;
     text-align: center;
 }
 
@@ -285,7 +391,7 @@ p {
     }
 
     #storyContent {
-        margin: 16%;
+        margin: 19%;
     }
 
     .story_info {
@@ -352,18 +458,27 @@ p {
 }
 
 .info-box {
-    display: flex; /* Используем flexbox для выравнивания элементов */
-    align-items: center; /* Центрируем элементы по вертикали */
-    justify-content: center; /* Центрируем элементы по горизонтали */
-    text-align: center; /* Выравнивание текста по центру */
-    opacity: 0; /* Начальная прозрачность */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Плавный переход для прозрачности и трансформации */
-    transform: translateY(10px); /* Сдвиг вниз для эффекта появления */
-    padding: 15px; /* Внутренние отступы для улучшения визуального восприятия */
-    border-radius: 8px; /* Закругленные углы для стиля */
-    color: white; /* Цвет текста */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Тень для глубины */
+    position: relative; /* Устанавливаем относительное позиционирование для контейнера */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(10px);
+    padding: 3.5vh;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
+.info-box.visible {
+    opacity: 1;
+}
+
+.text-overlay {
+    position: absolute; /* Абсолютное позиционирование текста */
+    text-align: center; /* Центрируем текст */
+}
+
 
 /* Эффект появления */
 .info-box.visible {

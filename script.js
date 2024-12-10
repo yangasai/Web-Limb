@@ -47,6 +47,7 @@ window.addEventListener('scroll', checkVisibility);
 checkVisibility();
 
 
+
 /* Просмотр скриншотов геймплея */
 function openModal(imageSrc) {
     const modal = document.getElementById('modal');
@@ -63,6 +64,22 @@ function closeModal() {
         modal.classList.remove('fade-out'); // Убираем класс анимации исчезновения
     }, 500);
 }
+
+
+/* Проверка доступа к покупке */
+function Buy() {
+    let inLogin = false;
+    if (!inLogin) {
+        openUser();
+    }
+    else {
+        window.location.href = 'nextPage.html';
+    }
+}
+
+
+
+
 
 
 
