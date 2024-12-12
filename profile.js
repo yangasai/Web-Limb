@@ -1,5 +1,37 @@
 function openUser() {
-    document.getElementById("userEnt").style.display = "flex";
+    const inLogin = localStorage.getItem('isLoggedIn') === 'true';
+    const userContainer = document.getElementById("userEnt");
+    const profileDisplay = document.getElementById("profileDisplay");
+
+    if (inLogin) {
+        if (profileDisplay.style.display === "block") {
+            profileDisplay.style.display = "none";
+        } else {
+            const username = localStorage.getItem('username');
+            profileDisplay.querySelector('#profileName').textContent = username;
+            profileDisplay.style.display = "block";
+        }
+        userContainer.style.display = "none";
+    } else {
+        profileDisplay.style.display = "none";
+        userContainer.style.display = "flex";
+    }
+}
+
+function logout() {
+    // Сброс данных о пользователе
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('username');
+
+    // Обновляем интерфейс
+    updateProfileName('');
+    document.getElementById("profileDisplay").style.display = "none";
+    document.getElementById("userEnt").style.display = "flex"; // Показываем контейнер для входа
+    alert("Вы вышли из аккаунта."); // Информируем пользователя
+}
+
+function closeUser() {
+    document.getElementById("userEnt").style.display = "none";
 }
 
 function closeUser() {
@@ -34,9 +66,9 @@ function validateLogin() {
                 return false;
             } else {
                 alert(data.message);
-                localStorage.setItem('isLoggedIn', 'true'); // Устанавливаем статус входа
-                localStorage.setItem('username', username); // Сохраняем имя пользователя
-                updateProfileName(username); // Обновляем имя профиля
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('username', username);
+                updateProfileName(username);
                 return true;
             }
         })
@@ -48,7 +80,7 @@ function validateLogin() {
 
 function updateProfileName(username) {
     const profileNameElement = document.getElementById('profileName');
-    profileNameElement.textContent = username; // Устанавливаем текст элемента
+    profileNameElement.textContent = username ? username : 'Гость';
 }
 
 

@@ -43,7 +43,6 @@ function checkVisibility() {
 // Добавляем слушатель события прокрутки
 window.addEventListener('scroll', checkVisibility);
 
-// Проверяем видимость при загрузке страницы
 checkVisibility();
 
 
@@ -61,19 +60,19 @@ function closeModal() {
     modal.classList.add('fade-out');
     setTimeout(() => {
         modal.classList.remove('show');
-        modal.classList.remove('fade-out'); // Убираем класс анимации исчезновения
+        modal.classList.remove('fade-out');
     }, 500);
 }
 
 
 /* Проверка доступа к покупке */
 function Buy() {
-    const inLogin = localStorage.getItem('isLoggedIn') === 'true'; // Проверяем статус входа
+    const inLogin = localStorage.getItem('isLoggedIn') === 'true';
 
     if (!inLogin) {
-        openUser(); // Открываем модальное окно для входа
+        openUser();
     } else {
-        window.location.href = 'nextPage.html'; // Переходим на следующую страницу
+        window.location.href = 'nextPage.html';
     }
 }
 
@@ -81,9 +80,7 @@ window.onload = function() {
     const inLogin = localStorage.getItem('isLoggedIn') === 'true';
     if (inLogin) {
         const username = localStorage.getItem('username');
-        updateProfileName(username); // Обновляем имя профиля
-        // Здесь можно перенаправить пользователя на следующую страницу
-        // window.location.href = 'nextPage.html';
+        updateProfileName(username);
     }
 };
 
