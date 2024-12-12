@@ -7,7 +7,7 @@
  <img src="https://img.shields.io/badge/HTML-pink" alt="[HTML]">
  <img src="https://img.shields.io/badge/CSS-blue" alt="[CSS]">
  <img src="https://img.shields.io/badge/JavaScript-purple" alt="[JavaScript]">
- <img src="https://img.shields.io/badgeNODE.js-blue" alt="[NODE.js]">
+ <img src="https://img.shields.io/badge/NODE.js-blue" alt="[NODE.js]">
 </p>
 
 
