@@ -19,7 +19,7 @@ This site offers the opportunity to purchase the game 'Limb', and also provides 
 
 ## Visual
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/776ded7e-491b-4e98-a6ab-c03a5ef111a6" alt="Visual">
+  <img src="https://github.com/user-attachments/assets/1580d6be-8ffa-4483-906e-01d5c53764b6" alt="Visual">
 </p>
 
 
