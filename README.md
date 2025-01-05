@@ -13,8 +13,8 @@
 
 ## About
 
-This site offers the opportunity to purchase the game 'Limb', and also provides all the interesting information about it.
-- [WebLimb](https://yangasai.github.io/Web-Limb/)
+This website provides an opportunity to purchase game currency for ZZZ. Get game news and provide services for each new game patch.
+- [WebLimb]()
 
 
 ## Visual
